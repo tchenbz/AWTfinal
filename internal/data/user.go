@@ -181,8 +181,7 @@ func (u UserModel) Update (user *User) error {
 func (u UserModel) GetForToken(tokenScope, tokenPlaintext string) (*User, error) {
     tokenHash := sha256.Sum256([]byte(tokenPlaintext))
 	query := `
-			SELECT users.id, users.created_at, users.username,
-				users.email, users.password_hash, users.activated, users.version
+			SELECT users.id, users.created_at, users.username, users.email, users.password_hash, users.activated, users.version
 			FROM users
 			INNER JOIN tokens
 			ON users.id = tokens.user_id

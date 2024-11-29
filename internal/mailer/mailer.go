@@ -8,8 +8,7 @@ import (
 
     "github.com/go-mail/mail/v2"
 )
-
-var templateFS embed.FS     
+var templateFS embed.FS
 
 type Mailer struct {
     dialer  *mail.Dialer
